@@ -10,7 +10,7 @@
 class state_machine
 {	
 	public  $states = array();
-    public  $curr_state;
+	public  $curr_state;
 	public  $input;
 	public  $output;
 	public  $bin_str   = 0;
@@ -33,12 +33,13 @@ class state_machine
 	$this->set_state(0);
 	  
 	//s#      // output      
-	$this->states = array('0'   =>		0,
-				   	      '1'   =>		0,
-					      '2'   =>		0,
-					      '3'   =>		0,
-						  '4'   =>      1,
-					      );	
+	$this->states = array(  
+	'0'   =>		0,
+	'1'   =>		0,
+	'2'   =>		0,
+	'3'   =>		0,
+	'4'   =>		1,
+	);	
 						  
 	/** 
 	 * The configuration is as follows, psuedocode
