@@ -1,26 +1,25 @@
 <?php
 		
-//+-------------------------------------------+
-//| Finite State Machine CLI
-//| ========================================
-//| Author:   John Cuppi
-//| Modified: 8:30 PM Thursday, December 05, 2013
-//| ========================================
-//+-------------------------------------------+
+/**
+ * Finite State Machine Command Line Interface
+ * 
+ * @author John Cuppi
+ * @date 11:57 AM Sunday, December 15, 2013
+ **/
 
-/* ========================
-   Load Library
-  ========================= */
+/**
+ * Load Library
+ **/
 
 require('libfsm.php');
 
 $fsm = new state_machine();
 
 
-/* ====================
-   Show Options
-  ===================== */
-
+/**
+ * Show options
+ **/
+ 
 print "========================= \n";
 print "Finite State Machine\n";
 print "========================= \n\n";
@@ -35,10 +34,10 @@ echo "Enter a number choice to select: ";
 $cin = fopen ("php://stdin","r"); // cin >> equivalent
 $line = fgets($cin);
 
-/* ========================
-   Enter input strings
-  ========================= */
-  
+/**
+ * Enter input strings
+ **/
+ 
 if(trim($line) == 1){
 
 	while(1) {
@@ -62,9 +61,11 @@ if(trim($line) == 1){
 		$fsm->process_bin_string();
 				
 		if($fsm->output >= 1){ 
-			echo "String is ACCEPTED";
+			echo "String is ACCEPTED.\n";
+			echo "Output: {$fsm->output}";
 		} else {
-			echo "String is NOT ACCEPTED";
+			echo "String is NOT ACCEPTED\n";
+			echo "Output: {$fsm->output}";
 		}		
 		
 		echo "\n";
@@ -74,21 +75,23 @@ if(trim($line) == 1){
 
 }
 
-/* ============================
-   Print states and transitions
-  ============================= */
+/**
+ * Print states and transitions
+ **/
   
 if(trim($line) == 2){
 
 	$fsm->print_transitions();
 	
+	sleep(5);
+	
     exit;
 }
 
 
-/* ==================
-   Quit
-  ==================== */
+/**
+ * Quit
+ **/
   
 if(trim($line) == 3){
     exit;

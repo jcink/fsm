@@ -1,0 +1,7 @@
+Finite State Machine Library & Command Line Interface
+
+This is an example of a Finite State Machine in PHP. Requires PHP 5.4.x to run.
+
+The default state machine is configured to only return "Accepted" or an output of 1 when the substring contains 1101
+
+You can reconfigure the state machine in the library file.
